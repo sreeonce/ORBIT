@@ -1,17 +1,11 @@
-# orbit
+# ORBIT
 
-A new Flutter project.
+Low-stakes parallel-play co-working app. Flutter, Firebase, Riverpod.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## State management rules
+1. Riverpod only. No setState for shared data, no Provider, Bloc or GetX.
+2. Use Notifier, AsyncNotifier and StreamProvider. No StateNotifier or ChangeNotifier providers.
+3. Firebase calls live in repository classes, never in widgets.
+4. Widgets only display state and call notifier methods.
+5. ref.watch in build(), ref.read in callbacks.
+6. All colors and fonts live in core/theme/app_theme.dart.
