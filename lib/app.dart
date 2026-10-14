@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'core/theme/app_theme.dart';
-import 'features/beacons/beacon_list_screen.dart';
+import 'features/auth/auth_gate.dart';
 
 class OrbitApp extends StatelessWidget {
   const OrbitApp({super.key});
@@ -10,7 +10,7 @@ class OrbitApp extends StatelessWidget {
     return MaterialApp(
       title: 'ORBIT',
       theme: AppTheme.light(),
-      home: const BeaconListScreen(),
+      home: const AuthGate(),
     );
   }
 }

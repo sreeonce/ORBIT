@@ -1,7 +1,9 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'beacon.dart';
 import 'beacons_provider.dart';
+import '../auth/auth_providers.dart';
 
 class BeaconListScreen extends ConsumerWidget {
   const BeaconListScreen({super.key});
@@ -11,7 +13,15 @@ class BeaconListScreen extends ConsumerWidget {
     final beacons = ref.watch(beaconsProvider);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('ORBIT')),
+      appBar: AppBar(
+  title: const Text('ORBIT'),
+  actions: [
+    IconButton(
+      icon: const Icon(Icons.logout),
+      onPressed: () => ref.read(authRepositoryProvider).signOut(),
+    ),
+  ],
+),
       body: ListView(
         children: [
           for (final b in beacons)
